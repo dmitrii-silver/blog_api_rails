@@ -12,6 +12,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "active_model_serializers"
 gem "will_paginate"
+gem "rack-cors"
+gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_auth"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -21,8 +23,6 @@ gem "will_paginate"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
-
-# gem "rack-cors"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
