@@ -2,7 +2,6 @@ require 'carrierwave/storage/fog'
 
 if Rails.env.production?
   CarrierWave.configure do |config|
-    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider:              'AWS',
       region:                'eu-west-3',
