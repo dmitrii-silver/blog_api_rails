@@ -1,1 +1,27 @@
-<h1>HelloUser</h1>
+<h1>Здравствуйте, <%= @user.nickname %>!!!</h1>
+
+<p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+
+<%= form_with(url: api_v1_user_registration_path, method: "put", html: {multipart: true}) do |f| %>
+  
+  <div>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  Загрузите вашу картинку: 
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+
+<%= f.submit "Загрузить" %>
+<% end %>

@@ -13,7 +13,12 @@ gem "bootsnap", require: false
 gem "active_model_serializers"
 gem "will_paginate"
 gem "rack-cors"
+gem "devise"
 gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_auth"
+gem "carrierwave"
+gem "rmagick"
+gem "dotenv-rails"
+gem "fog-aws"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

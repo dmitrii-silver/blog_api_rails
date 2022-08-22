@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
 
+  mount_uploader :avatar, AvatarUploader
+
   has_many :posts , foreign_key: "author", dependent: :destroy
   has_many :comments , foreign_key: "author", dependent: :destroy
   

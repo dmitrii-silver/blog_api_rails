@@ -1,6 +1,8 @@
 module Api
   module V1
     class CommentsController < ApplicationController
+      # before_action :authenticate_api_v1_user!, only: [:create]
+      
       def index
         @comments = Comment.all
         render json: @comments

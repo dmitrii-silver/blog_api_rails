@@ -1,6 +1,7 @@
 module Api
   module V1
     class PostsController < ApplicationController
+      # before_action :authenticate_api_v1_user!, only: [:create]
       
       def index
         @posts = Post.paginate(
@@ -19,6 +20,7 @@ module Api
       end  
 
       def create
+        # @post = Post.create(post_params.merge(author: current_api_v1_user.id))
         @user = User.create!(user_params)
         @post = Post.new(post_params.merge(author: @user.id))
         if @post.save
@@ -31,7 +33,7 @@ module Api
       private
 
       def user_params
-        params.require(:user).permit(:nickname, :email, :password)
+        params.require(:user).permit(:nickname, :email, :password, :avatar)
       end
 
       def post_params
