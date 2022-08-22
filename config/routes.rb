@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :comments, defaults: { format: :json }
 
       get 'profiles/:id', to: 'profiles#show'
+      get 'profiles/', to: 'profiles#new'
     end
   end
 end
