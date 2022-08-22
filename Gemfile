@@ -18,6 +18,7 @@ gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_a
 gem "carrierwave"
 gem "rmagick"
 gem "dotenv-rails"
+gem "fog"
 gem "fog-aws"
 
 # Use Redis adapter to run Action Cable in production
