@@ -1,4 +1,4 @@
-<h1>Здравствуйте, <%= @user.nickname %>!!!</h1>
+<h1>Здравствуйте!!!</h1>
 
 <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
 
@@ -19,9 +19,14 @@
     <%= f.text_field :password %>
   </div>
 
-  Загрузите вашу картинку: 
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation %>
+  </div>
 
-<%= f.submit "Загрузить" %>
+  Загрузите вашу картинку:<br> 
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %><br>
+
+<%= f.submit "Загрузить" %><br>
 <% end %>
