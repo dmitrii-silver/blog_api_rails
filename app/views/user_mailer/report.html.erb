@@ -1,0 +1,30 @@
+<p>
+  Analytical report by <%= @start_date %> to <%= @end_date %>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>nickname</th>
+      <th>email</th>
+      <th>number of posts for the period</th>
+      <th>number of comments for the period</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.sort_by_rating(@start_date, @end_date).each do |user|
+ %>
+    <tr>
+      <td><%= user.nickname %>
+      </td>
+      <td><%= user.email %>
+      </td>
+      <td><%= user.posts_between_date(@start_date, @end_date).count %>
+      </td>
+      <td><%= user.comments_between_date(@start_date, @end_date).count %>
+      </td>
+      <td><%= user.rating(@start_date, @end_date) %>
+      </td>
+    </tr>
+  <% end %></tbody>
+</table>
