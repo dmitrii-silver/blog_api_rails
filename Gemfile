@@ -20,6 +20,7 @@ gem "rmagick"
 gem "dotenv-rails"
 gem 'sidekiq'
 gem "letter_opener"
+gem 'mailjet'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
