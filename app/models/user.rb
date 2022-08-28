@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :posts , foreign_key: "author", dependent: :destroy
   has_many :comments , foreign_key: "author", dependent: :destroy
   
-  validates :nickname, :email, :password, presence: true
+  validates :nickname, :email, :password, :password_confirmation, presence: true
 
   def self.send_report(start_date = "", end_date = "", email = "")
     begin

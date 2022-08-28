@@ -21,8 +21,8 @@ module Api
 
       def create
         # @post = Post.create(post_params.merge(author: current_api_v1_user.id))
-        @user = User.create!(user_params)
-        @post = Post.new(post_params.merge(author: @user.id))
+        @user = User.find(params[:user_id])
+        @post = @user.posts.build(post_params.merge(author: @user.id))
         if @post.save
           render json: @post, status: :created
         else

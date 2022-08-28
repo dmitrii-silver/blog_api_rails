@@ -14,13 +14,13 @@ module Api
       end  
 
       def create
-        user = User.create!(user_params)
-        post = Post.find(params[:post_id])
-        comment = Comment.create(comment_params.merge(autor: user.id).merge(post: post_id))
-        if comment.save
-          render json: comment, status: :created
+        # @comment = Comment.create(post_params.merge(author: current_api_v1_user.id))
+        @user = User.find(params[:user_id])
+        @comment = @user.comments.build(comment_params.merge(autor: @user.id))
+        if @comment.save
+          render json: @comment, status: :created
         else
-          render json: comment.errors, status: :unprocessable_entity
+          render json: @comment.errors, status: :unprocessable_entity
         end
       end
 
