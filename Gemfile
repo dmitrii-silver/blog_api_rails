@@ -21,6 +21,7 @@ gem "dotenv-rails"
 gem 'sidekiq'
 gem "letter_opener"
 gem 'mailjet'
+gem "faker", :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -34,7 +35,6 @@ gem 'mailjet'
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
-  gem "faker", :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :test do
