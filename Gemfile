@@ -20,7 +20,7 @@ gem "rmagick"
 gem "dotenv-rails"
 gem 'sidekiq'
 gem "letter_opener"
-gem 'mailjet'
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 gem "faker", :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Redis adapter to run Action Cable in production
