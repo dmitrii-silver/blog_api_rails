@@ -41,7 +41,7 @@ module BlogApiRails
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.action_mailer.delivery_method = :mailjet
+    config.action_mailer.delivery_method = :mailjet_api
     
     config.active_job.queue_adapter = :sidekiq
 
