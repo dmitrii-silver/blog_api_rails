@@ -34,12 +34,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  def posts_between_date(start_date, end_date)
-    self.posts.where(published_at: start_date..end_date)
-  end
-
   def comments_between_date(start_date, end_date)
     self.comments.where(published_at: start_date..end_date)
+  end
+
+  def posts_between_date(start_date, end_date)
+    self.posts.where(published_at: start_date..end_date)
   end
 
   def search_range(start_date, end_date)

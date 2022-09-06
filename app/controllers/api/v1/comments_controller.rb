@@ -14,7 +14,7 @@ module Api
       end  
 
       def create
-        # @comment = Comment.create(post_params.merge(author: current_api_v1_user.id))
+        # @comment = Comment.create(comment_params.merge(author: current_api_v1_user.id))
         @user = User.find(params[:id])
         @comment = Comment.new(comment_params)
         @comment.author = @user.id

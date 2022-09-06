@@ -7,6 +7,6 @@ class Comment < ApplicationRecord
   private
 
   def set_published_at
-    self.published_at = Time.now if self.published_at.blank?
+    self.published_at = Time.now.to_date if self.published_at.blank?
   end
 end
