@@ -9,11 +9,3 @@ users.each do |user|
     Post.create({title: Faker::Book.title, body: Faker::Lorem.sentence, user: user, published_at: Faker::Date.between(from: 2.days.ago, to: Date.today)})
   end
 end
-
-posts = Post.all
-
-users.each do |user|
-  posts.each do |post|
-    Comment.create({body: Faker::Lorem.sentence, post: post, user: user, published_at: Faker::Date.between(from: 2.days.ago, to: Date.today)})
-  end
-end

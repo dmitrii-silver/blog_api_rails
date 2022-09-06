@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   belongs_to :user, class_name: "User", foreign_key: "author"
-  has_many :comments , foreign_key: "post", dependent: :destroy
 
   before_validation :set_published_at
   validates :title, :body, :user, :published_at, presence: true
