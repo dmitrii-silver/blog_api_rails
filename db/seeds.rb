@@ -6,6 +6,12 @@ users = User.all
 
 users.each do |user|
   rand(7).times do
-    Post.create({title: Faker::Book.title, body: Faker::Lorem.sentence, user: user, published_at: Faker::Date.between(from: 2.days.ago, to: Date.today)})
+    Post.create({title: Faker::Book.title, body: Faker::Lorem.sentence, user: user, published_at: Faker::Date.between(from: 10.days.ago, to: Date.today)})
+  end
+end
+
+users.each do |user|
+  rand(7).times do
+    Comment.create({body: Faker::Lorem.sentence, user: user, published_at: Faker::Date.between(from: 10.days.ago, to: Date.today)})
   end
 end
